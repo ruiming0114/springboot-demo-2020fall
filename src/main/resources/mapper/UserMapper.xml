@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+
+    <!--addUser,设置主键自增-->
+    <insert id="addUser" parameterType="map" useGeneratedKeys="true" keyColumn="uid">
+        insert into demo.user(email,password) values (#{email},#{password})
+    </insert>
+
+    <!--getUserById-->
+    <select id="getUserById" parameterType="int" resultType="User">
+        select * from demo.user where demo.user.uid = #{uid}
+    </select>
+
+    <!--getUserByEmail-->
+    <select id="getUserByEmail" parameterType="String" resultType="User">
+        select * from demo.user where demo.user.email = #{email}
+    </select>
+
+</mapper>
