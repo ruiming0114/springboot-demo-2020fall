@@ -11,10 +11,12 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
   mail:
+    protocol: smtps
     host: smtp.126.com
     username: lrmpublic@126.com
     password: DMVSWWYTENQXEPOL
     spring.mail.smtp.ssl.enable: true
+    port: 465
   redis:
     host: 123.56.145.79
     port: 6379
